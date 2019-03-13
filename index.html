@@ -126,7 +126,7 @@
             <h2 class="section-heading text-uppercase">Solution</h2>
             <h3 class="section-subheading text-muted">This project aims to deliver a solution for automating the survey and analysis process of defect detection in paintings, 
               saving a museum thousands of hours in analysis time a year. Automatic crack detection is the specific goal of this project, to be performed 
-              with the usage of a consumer grade DSLR mounted on a gantry system.
+              with the usage of consumer grade DSLR mounted on a gantry system. The capture of the images and detection of defects is conducted in real time.
             </h3>
           </div>
         </div>
@@ -483,8 +483,21 @@
                   <h2 class="text-uppercase">Weekly Blog: February 28, 2019</h2>
                   <p class="item-intro text-muted">Development of the defect detection system</p>
                   <img class="img-fluid d-block mx-auto" src="img/portfolio/04-full.jpg" alt="">
-                  <p>The processing of the defects has been offloaded to a laptop. The module for defect detection runs
-                    via the command line with the specified job parameters. A new job is started every time a canvas
+                  <p>The processing of the defects is offloaded to a laptop where the detection module is running. The inputs to this algorithm are
+                    the painting size and path of the working directory on the laptop where the processed images are to be stored. The module for 
+                    defect detection runs via the command line with the specified job parameters, as listed above. A new job is started every time 
+                    a painting is scanned. After the camera has captured the image for a section of the painting, the detection module retrives
+                    the image from the server and stores it locally on the laptop to be processed. The image is processed through Gaussian blurring
+                    and morphological operations to aid in the detection of crack like features. Afterwards an edge detection and line transform 
+                    function are used to retrive the points of the cracks on the painting. These points are then plotted in red on the image,
+                    as can be seen in the image above. As each image is processed, the original and processed images are shown side by side to the
+                    user so they can be monitored in real time. Images are stitched by the row as they are processed and finally all the rows are  
+                    stitched together to form the complete defect map of the painting. Conservators can then view this image, or any of the single images,
+                     to asses the defect detection in detail. Issues faced in the development of the algorithm include determination of kernel size
+                     to use for the blurring and morphological operations and elimination of noise. For the kernel size, numerous 
+                     types and sizes of kernels were tested till a final one suited for detecting dark cracks in light areas and light cracks in dark
+                     areas was found. For the elimination of noise, only cracks which surpassed a certain length were plotted and increased Gaussian blur
+                     helped to further smooth the image out.
                     
                   </p>
                   <button class="btn btn-primary" data-dismiss="modal" type="button">
