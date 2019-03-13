@@ -200,7 +200,7 @@
                   </div>
                   <div class="timeline-body">
                     <p class="text-muted">Key functions include provision of minimum major and minor axes resolution of ±1 mm by the motors and
-                      provision of two major voltage rails, 24V and 5V, for the motors, linear actuators, Raspberry Pi and Arduinos.</p>
+                      provision of two major voltage rails, 24V and 5V, for the motors, linear actuators, Raspberry Pi and Arduino.</p>
                   </div>
                 </div>
               </li>
@@ -261,7 +261,7 @@
         <div class="row">
           <div class="col-lg-12 text-center">
             <h2 class="section-heading text-uppercase">Progress Blog</h2>
-            <h3 class="section-subheading text-muted">Weekly blog posts that describe the incremental completion of the project parts</h3>
+            <h3 class="section-subheading text-muted">Blog posts that describe the incremental completion of the project components</h3>
           </div>
         </div>
         <div class="row">
@@ -464,23 +464,23 @@
               <div class="col-lg-8 mx-auto">
                 <div class="modal-body">
                   <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">Weekly Blog: January 30, 2019</h2>
+                  <h2 class="text-uppercase">Weekly Blog: February 1, 2019</h2>
                   <p class="item-intro text-muted">Construction of mechanical structure.</p>
                   <img class="img-fluid d-block mx-auto" src="img/portfolio/01-full.jpg" alt="">
                   <p>The first component of the system built is the mechanical structure. The structure consists of 15 aluminium 80/20 T slots
                     forming a rectangular prism of 90 cm x 75 cm x 50 cm. Components mounted to the structure 
-                    include the motors and camera lens apparatus. The camera moves along the x and y direction using a pulley system composed of 
-                    timing belts and bearings. There are a total of 3 motors controlling the movement of the camera in the major and minor axes 
-                    with 2 on either end of the major axis and one motor on the starting end of the minor axis. Cantilever limit switches on 
-                    either ends of the major and minor axes help to control the restricted motion of the camera. 3D printerd sliders help to guide
+                    include the motors and camera lens apparatus. The camera moves along the x and y directions using a pulley system composed of 
+                    timing belts and bearings. There are a total of three motors controlling the movement of the camera in the major and minor axes 
+                    with two on either end of the major axis and one motor on an end of the minor axis. Cantilever limit switches on 
+                    either ends of the major and minor axes help to control the restricted motion of the camera. 3D printed sliders help to guide
                     and move the rails along both axes. First the rails were bolted in using L brackets to build the skeleton of the structure. 
                     Next the motor mounts and the pulley system were attached. Lastly the camera mount was attached onto a slider with the camera
-                    being held to the mount with a screw in bolt. For the constraint of lighting control, a blackout cloth is draped over the entire
+                    being held to the mount using a screw-in bolt. For the constraint of lighting control, a blackout cloth is draped over the entire
                     structure to limit the entrance of external lighting into the system. Some issues faced in the assembly were alignment of the rails
-                    in the major and minor axes as the camera was moved. This issue was resolved by realigning the entire structure to ensure the 
+                    in the major and minor axes as the camera moved. This issue was resolved by realigning the entire structure to ensure that the 
                     rails were parallel and the pulley mounts were properly tightened and secure. The initial design consisted of acrylic 
                     mounts for the motors, however these mounts proved to be uncapable of handling the motor weight and thus were replaced by
-                    aluminum mounts plates instead, thus strenghtening the motor mounts. 
+                    aluminum mount plates instead, thus strenghtening the motor mounts. 
                   </p>
                   <button style="background-color: #212529" class="btn btn-primary" data-dismiss="modal" type="button">
                     <i class="fas fa-times"></i>
@@ -510,10 +510,10 @@
                   <p class="item-intro text-muted">Construction of electrical structure.</p>
                   <img class="img-fluid d-block mx-auto" src="img/portfolio/02-full.jpg" alt="">
                   <p>The electrical assembly is composed of the Arduino, Raspberry Pi, motors, motor controllers, power supply, router, 
-                    and the associated wiring of all components together. The electrical system was integrated onto an acrylic board which
-                    was attached to the top corner of the mechanical structure. The motors and limit switches were mounted in their respective 
-                    locations on the major and minor axes, and twisted pair cables were used to connect the power and signal wires to the 
-                    main electrical assembly.
+                    and the associated wiring of all components together. The electrical system (i.e. Arduino, Raspberry Pi and motor controllers) 
+                    was integrated onto an acrylic board which was attached to the top corner of the mechanical structure. The motors and limit 
+                    switches were mounted in their respective locations on the major and minor axes, and twisted pair cables were used to connect 
+                    the power and signal wires to the main electrical assembly. The router is powered via a wall outlet and connected to the Raspberry Pi.
                   </p>
                   <button style="background-color: #212529" class="btn btn-primary" data-dismiss="modal" type="button">
                     <i class="fas fa-times"></i>
@@ -542,13 +542,16 @@
                   <h2 class="text-uppercase">Weekly Blog: February 20, 2019</h2>
                   <p class="item-intro text-muted">Development of the communication software architecture.</p>
                   <img class="img-fluid d-block mx-auto" src="img/portfolio/03-full.jpg" alt="">
-                  <p>The communication system consists of an Arduino, Raspberry Pi, router, and a laptop. As can be seen in 
-                    the diagram above, the laptop communicated job parameter and instructions to the Raspberry Pi which subsequently
+                  <p>The communication system consists of an Arduino, Raspberry Pi, router, and a laptop. This system is dictates the
+                    scanning and capture of the image set of the painting. A job is started for every new scan set of the painting.
+                    Input parameters to the job include the field of view for the camera, set overlap for the images, and the painting 
+                    dimensions. A job is started via the command line on the laptop terminal by the user. As can be seen in the diagram 
+                    above, the laptop communicates the job parameters and instructions to the Raspberry Pi which subsequently
                     channels the movement instructions to the Arduino for the control of the motors. The Arduino also implements the
                     limit switch logic to protect the camera from crashing into the rails. The Raspberry Pi controls the capture of
-                    the image and the flashing of the LED flash ring appended to the camera. After the capture of the images, they are
-                    stored locally on the laptop and exposed on a FTP server also. Once an image has been captured, a notification is sent
-                    to retrieve it and process the image for defects. 
+                    the image by the camera and the flashing of the LED flash ring. After the capture of the images, they are
+                    stored locally on the Raspberry Pi and exposed on a FTP server. Once an image has been captured, a notification is sent
+                    to the detection module for its retrieval and processsing for defects. 
                   </p>
                   <button style="background-color: #212529" class="btn btn-primary" data-dismiss="modal" type="button">
                     <i class="fas fa-times"></i>
@@ -580,18 +583,18 @@
                   <p>The processing of the defects is offloaded to a laptop where the detection module is running. The inputs to this algorithm are
                     the painting size and path of the working directory on the laptop where the processed images are to be stored. The module for 
                     defect detection runs via the command line with the specified job parameters, as listed above. A new job is started every time 
-                    a painting is scanned. After the camera has captured the image for a section of the painting, the detection module retrives
+                    a painting is scanned. After the camera has captured the image for a section of the painting, the detection module retrieves
                     the image from the server and stores it locally on the laptop to be processed. The image is processed through Gaussian blurring
                     and morphological operations to aid in the detection of crack like features. Afterwards an edge detection and line transform 
-                    function are used to retrive the points of the cracks on the painting. These points are then plotted in red on the image,
+                    function are used to retrieve the points of the cracks on the painting. These points are then plotted in red on the image,
                     as can be seen in the image above. As each image is processed, the original and processed images are shown side by side to the
-                    user so they can be monitored in real time. Images are stitched by the row as they are processed and finally all the rows are  
+                    user in a window so they can be monitored in real time. Images are stitched by the row as they are processed and finally all the rows are  
                     stitched together to form the complete defect map of the painting. Conservators can then view this image, or any of the single images,
-                     to asses the defect detection in detail. Issues faced in the development of the algorithm include determination of kernel size
-                     to use for the blurring and morphological operations and elimination of noise. For the kernel size, numerous 
-                     types and sizes of kernels were tested till a final one suited for detecting dark cracks in light areas and light cracks in dark
-                     areas was found. For the elimination of noise, only cracks which surpassed a certain length were plotted and increased Gaussian blur
-                     helped to further smooth the image out.
+                    to asses the defect detection in detail. Issues faced in the development of the algorithm include determination of kernel size
+                    to use for the blurring and morphological operations and elimination of noise. For the kernel size, numerous 
+                    types and sizes of kernels were tested till a final one suited for detecting dark cracks in light areas and light cracks in dark
+                    areas was found. For the elimination of noise, only cracks which surpassed a certain length were plotted and increased Gaussian blur kernel size 
+                    helped to further smooth the images out.
                     
                   </p>
                   <button style="background-color: #212529" class="btn btn-primary" data-dismiss="modal" type="button">
